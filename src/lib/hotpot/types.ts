@@ -13,8 +13,9 @@ export interface ChromaMatch {
   campaign_name: string;
   similarity_score: number;
   first_seen: string;
-  campaign_id?: string;
-  syndicate?: string;
+  campaign_id?: string | undefined;
+  syndicate?: string | undefined;
+
 }
 
 export interface AnalysisResult {
