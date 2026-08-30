@@ -34,7 +34,7 @@ export function localEmbed(text: string): number[] {
   const vec = new Float64Array(LOCAL_DIMS);
   const tokens = tokenize(text);
   const grams = [...tokens];
-  for (let i = 0; i < tokens.length - 1; i++) grams.push(`${tokens[i]}_${tokens[i + 1]}`);
+  for (let i = 0; i < tokens.length - 1; i++) grams.push(`${tokens[i]!}_${tokens[i + 1]!}`);
 
   for (const g of grams) {
     for (let k = 0; k < 3; k++) {
