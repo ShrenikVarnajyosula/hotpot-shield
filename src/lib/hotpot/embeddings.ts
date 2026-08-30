@@ -40,7 +40,7 @@ export function localEmbed(text: string): number[] {
     for (let k = 0; k < 3; k++) {
       const idx = hash(g, k * 7919) % LOCAL_DIMS;
       const sign = hash(g, k * 104729) % 2 === 0 ? 1 : -1;
-      vec[idx] += sign * (1 / Math.sqrt(k + 1));
+      vec[idx] = (vec[idx] ?? 0) + sign * (1 / Math.sqrt(k + 1));
     }
   }
   let norm = 0;
