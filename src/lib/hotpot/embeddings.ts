@@ -109,9 +109,11 @@ export function cosine(a: number[], b: number[]): number {
   let na = 0;
   let nb = 0;
   for (let i = 0; i < n; i++) {
-    dot += a[i] * b[i];
-    na += a[i] * a[i];
-    nb += b[i] * b[i];
+    const x = a[i] ?? 0;
+    const y = b[i] ?? 0;
+    dot += x * y;
+    na += x * x;
+    nb += y * y;
   }
   return dot / (Math.sqrt(na) * Math.sqrt(nb) || 1);
 }
